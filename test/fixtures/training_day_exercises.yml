@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  training_day_id: 
+  exercise_id: 
+  repetition: 1
+  sets: 1
+
+two:
+  training_day_id: 
+  exercise_id: 
+  repetition: 1
+  sets: 1

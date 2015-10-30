@@ -3,6 +3,7 @@ class CreateExercises < ActiveRecord::Migration
     create_table :exercises do |t|
       t.string :name
       t.text :description
+      t.references :muscle_group, index: true
 
       t.timestamps null: false
     end
