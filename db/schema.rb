@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20151030190317) do
   add_index "exercises", ["muscle_group_id"], name: "index_exercises_on_muscle_group_id"
 
   create_table "muscle_groups", force: :cascade do |t|
+    t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
