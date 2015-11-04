@@ -32,12 +32,12 @@ default: &default
 
 development:
   <<: *default
-  database: newname198_development
-  username: newname198
-  password: <%= ENV['NEWNAME198_DATABASE_PASSWORD'] %>
+  database: PersonalTrainer_development
+  username: PersonalTrainer
+  password: <%= ENV['PersonalTrainer_DATABASE_PASSWORD'] %>
 
 production:
     <<: *default
-    database: newname198_production
-    username: newname198
-    password: <%= ENV['NEWNAME198_DATABASE_PASSWORD'] %>
+    database: PersonalTrainer_production
+    username: PersonalTrainer
+    password: <%= ENV['PersonalTrainer_DATABASE_PASSWORD'] %>
