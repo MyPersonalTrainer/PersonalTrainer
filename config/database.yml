@@ -25,24 +25,15 @@
 #  database: db/production.sqlite3
 default: &default
   adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
-#  timeout: 5000
-development:
-  adapter: postgresql
-  encoding: UTF8
-  #database: trainer_db
-  #host: localhost
-  pool: 5
-  database: newname198_production
-  username: newname198
-  password: <%= ENV['NEWNAME198_DATABASE_PASSWORD'] %>
 
-#test:
-#<<: *default
-#database: PersonalTrainer_test
+development:
+  <<: *default
+  database: newname198_development
 
 production:
-  <<: *default
-  database: newname198_production
-  username: newname198
-  password: <%= ENV['NEWNAME198_DATABASE_PASSWORD'] %>
+    <<: *default
+    database: newname198_production
