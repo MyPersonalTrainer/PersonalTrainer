@@ -5,9 +5,9 @@ pool: 5
 
 development:
 <<: *default
-database: PersonalTrainer_production
-username: PersonalTrainer
-password: <%= ENV['PERSONAL_TRAINER_DATABASE_PASSWORD'] %>
+database: newname198_production
+username: newname198
+password: <%= ENV['NEWNAME198_DATABASE_PASSWORD'] %>
 
 test:
 <<: *default
@@ -15,6 +15,6 @@ database: PersonalTrainer_test
 
 production:
 <<: *default
-database: PersonalTrainer_production
-username: PersonalTrainer
-password: <%= ENV['PERSONAL_TRAINER_DATABASE_PASSWORD'] %>
+database: newname198_production
+username: newname198
+password: <%= ENV['NEWNAME198_DATABASE_PASSWORD'] %>
