@@ -5,7 +5,9 @@ pool: 5
 
 development:
 <<: *default
-database: PersonalTrainer_development
+database: PersonalTrainer_production
+username: PersonalTrainer
+password: <%= ENV['PERSONAL_TRAINER_DATABASE_PASSWORD'] %>
 
 test:
 <<: *default
