@@ -1,1 +1,8 @@
-<h1>Home#index</h1>
+<% @muscles.each do |m| %>
+    <h3><em><%= m.name %>:</em></h3>
+    <ol>
+        <% m.exercises.each do |e|%>
+            <li> <%= e.name %></li>
+        <% end %>
+    </ol>
+<% end %>

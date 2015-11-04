@@ -25,9 +25,9 @@
 #  database: db/production.sqlite3
 development:
   adapter: postgresql
-  encoding: unicode
+  encoding: UTF8
   database: trainer_db
   host: localhost
   pool: 5
-  username: trainer
-  password: trainer
+  username: stas
+  password: stason
