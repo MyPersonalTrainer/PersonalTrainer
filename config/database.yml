@@ -30,3 +30,11 @@ development:
   pool: 5
   username: stas
   password: stason
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: personal-trainer-app_production
+  username: personal-trainer-app
+  password: <%= ENV['PERSONAL-TRAINER-APP_DATABASE_PASSWORD'] %>
+
