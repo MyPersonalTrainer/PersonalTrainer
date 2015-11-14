@@ -23,21 +23,18 @@
 #production:
 #  <<: *default
 #  database: db/production.sqlite3
-default: &default
+development:
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  database: trainer_db
   pool: 5
-
-development:
-  <<: *default
-  database: PersonalTrainer_development
-  username: PersonalTrainer
-  password: <%= ENV['PersonalTrainer_DATABASE_PASSWORD'] %>
+  username: stas
+  password: stason
 
 production:
-    <<: *default
-    database: PersonalTrainer_production
-    username: PersonalTrainer
-    password: <%= ENV['PersonalTrainer_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: personal-trainer-app_production
+  username: personal-trainer-app
+  password: <%= ENV['PERSONAL-TRAINER-APP_DATABASE_PASSWORD'] %>
+

@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @muscles = MuscleGroup.all
+    @muscle_groups = MuscleGroup.all
+    @ret = {}
+    render json: @muscle_groups.each {|group| @ret[group.name] = group.exercises}
   end
 end
