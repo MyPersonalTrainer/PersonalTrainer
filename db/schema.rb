@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151114114249) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151114114249) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "exercises", ["muscle_group_id"], name: "index_exercises_on_muscle_group_id"
+  add_index "exercises", ["muscle_group_id"], name: "index_exercises_on_muscle_group_id", using: :btree
 
   create_table "muscle_groups", force: :cascade do |t|
     t.string   "name"
@@ -37,8 +40,8 @@ ActiveRecord::Schema.define(version: 20151114114249) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "program_training_days", ["program_id"], name: "index_program_training_days_on_program_id"
-  add_index "program_training_days", ["training_day_id"], name: "index_program_training_days_on_training_day_id"
+  add_index "program_training_days", ["program_id"], name: "index_program_training_days_on_program_id", using: :btree
+  add_index "program_training_days", ["training_day_id"], name: "index_program_training_days_on_training_day_id", using: :btree
 
   create_table "programs", force: :cascade do |t|
     t.boolean  "gender"
@@ -62,14 +65,16 @@ ActiveRecord::Schema.define(version: 20151114114249) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "training_day_exercises", ["exercise_id"], name: "index_training_day_exercises_on_exercise_id"
-  add_index "training_day_exercises", ["training_day_id"], name: "index_training_day_exercises_on_training_day_id"
+  add_index "training_day_exercises", ["exercise_id"], name: "index_training_day_exercises_on_exercise_id", using: :btree
+  add_index "training_day_exercises", ["training_day_id"], name: "index_training_day_exercises_on_training_day_id", using: :btree
 
   create_table "training_days", force: :cascade do |t|
     t.integer  "wday"
-    t.text     "muscles_groups"
+    t.text     "muscles_groups",              array: true
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
 
+  add_foreign_key "training_day_exercises", "exercises"
+  add_foreign_key "training_day_exercises", "training_days"
 end

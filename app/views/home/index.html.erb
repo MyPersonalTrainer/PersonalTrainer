@@ -1,2 +1,12 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% @muscle_groups.each do |group| %>
+    <h3><strong><%= group.name %> :</strong></h3>
+    <ul>
+      <% group.exercises.each do |e| %>
+        <li>
+          <em>
+            <%= e.name %>
+          </em>
+        </li>
+      <% end %>
+    </ul>
+<% end %>
