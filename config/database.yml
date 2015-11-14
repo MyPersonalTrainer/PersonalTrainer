@@ -26,7 +26,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: trainer_db
+  database: stas
   pool: 5
   username: stas
   password: stason

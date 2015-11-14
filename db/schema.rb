@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20151114114249) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -58,8 +55,6 @@ ActiveRecord::Schema.define(version: 20151114114249) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
-  add_index "programs_training_days", ["program_id"], name: "index_programs_training_days_on_program_id", using: :btree
-  add_index "programs_training_days", ["training_day_id"], name: "index_programs_training_days_on_training_day_id", using: :btree
 
   create_table "training_day_exercises", force: :cascade do |t|
     t.integer  "training_day_id"
@@ -75,17 +70,11 @@ ActiveRecord::Schema.define(version: 20151114114249) do
 
   create_table "training_days", force: :cascade do |t|
     t.integer  "wday"
-
     t.text     "muscles_groups",              array: true
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
-
-  add_index "training_days", ["muscle_group_id"], name: "index_training_days_on_muscle_group_id", using: :btree
-
 
   add_foreign_key "training_day_exercises", "exercises"
   add_foreign_key "training_day_exercises", "training_days"
-
-
 end
