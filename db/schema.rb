@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 20151114114249) do
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "muscles_groups_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "muscle_group_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
+  add_index "exercises", ["muscle_group_id"], name: "index_exercises_on_muscle_group_id"
 
   create_table "muscle_groups", force: :cascade do |t|
     t.string   "name"
@@ -65,11 +67,9 @@ ActiveRecord::Schema.define(version: 20151114114249) do
 
   create_table "training_days", force: :cascade do |t|
     t.integer  "wday"
-    t.integer  "muscle_group_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.text     "muscles_groups"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
-
-  add_index "training_days", ["muscle_group_id"], name: "index_training_days_on_muscle_group_id"
 
 end
