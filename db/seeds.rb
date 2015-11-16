@@ -27,7 +27,7 @@ Exercise.create(name: 'Горизонтальна тяга в блоковому
 Exercise.create(name: 'Вертикальна тяга зворотнім хватом', description: '', muscle_group_id: 1)
 Exercise.create(name: 'Вертикальна тяга широким хватом', description: '', muscle_group_id: 1)
 
-#-------------------Chest------------------------->
+#-------------------Chest------------------------->8
 
 Exercise.create(name: 'Жим штанги лежачи на горизонтальній лавці', description: '', muscle_group_id: 2)
 Exercise.create(name: 'Жим штанги лежачи на похилій', description: '', muscle_group_id: 2)
@@ -38,7 +38,7 @@ Exercise.create(name: 'Розведення гантелей на похилій
 Exercise.create(name: 'Зведення рук в тренажері "Батерфлай"', description: '', muscle_group_id: 2)
 Exercise.create(name: 'Розведення гантелей на горизонтальній лавці', description: '', muscle_group_id: 2)
 
-#-------------------Biceps----------------------->
+#-------------------Biceps----------------------->16
 
 Exercise.create(name: 'Підйом штанги на біцепс', description: '', muscle_group_id: 3)
 Exercise.create(name: 'Підйом "Молот"', description: '', muscle_group_id: 3)
@@ -47,7 +47,7 @@ Exercise.create(name: 'Підйом на біцепс з EZ-грифом сто�
 Exercise.create(name: 'Підйом гантелі на біцепс', description: '', muscle_group_id: 3)
 Exercise.create(name: 'Підйом на біцепс зі штангою на тренажері Скота', description: '', muscle_group_id: 3)
 
-#-------------------Triceps----------------------->
+#-------------------Triceps----------------------->22
 
 Exercise.create(name: 'Жим лежачи вузьким хватом', description: '', muscle_group_id: 4)
 Exercise.create(name: 'Жим вузьким хватом на похилій лаві', description: '', muscle_group_id: 4)
@@ -59,7 +59,7 @@ Exercise.create(name: 'Віджимання на брусах', description: '',
 Exercise.create(name: 'Віджимання між лавками', description: '', muscle_group_id: 4)
 Exercise.create(name: 'Віджимання від підлоги вузьким хватом', description: '', muscle_group_id: 4)
 
-#-------------------Shoulders-------------------->
+#-------------------Shoulders-------------------->31
 
 Exercise.create(name: 'Тяга штанги до підборіддя', description: '', muscle_group_id: 5)
 Exercise.create(name: 'Жим штанги сидячи з-за голови', description: '', muscle_group_id: 5)
@@ -70,7 +70,7 @@ Exercise.create(name: 'Жим Арнольда', description: '', muscle_group_i
 Exercise.create(name: 'Розведення гантелей в сторони стоячи', description: '', muscle_group_id: 5)
 Exercise.create(name: 'Розведення гантелей в сторони з нахилом', description: '', muscle_group_id: 5)
 
-#-------------------Legs------------------------->
+#-------------------Legs------------------------->39
 
 Exercise.create(name: 'Присідання з штангою на грудях', description: '', muscle_group_id: 6)
 Exercise.create(name: 'Присідання з штангою на спині', description: '', muscle_group_id: 6)
@@ -82,7 +82,7 @@ Exercise.create(name: 'Розгинання ніг в тренажері сид�
 Exercise.create(name: 'Розгинання ніг в тренажері лежачи', description: '', muscle_group_id: 6)
 Exercise.create(name: 'Підйоми на носках стоячи', description: '', muscle_group_id: 6)
 
-#-------------------Stomach---------------------->
+#-------------------Press------------------------>48
 
 Exercise.create(name: 'Скручування', description: '', muscle_group_id: 7)
 Exercise.create(name: 'Косі скручування', description: '', muscle_group_id: 7)
