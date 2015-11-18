@@ -19,7 +19,7 @@ class ProgramsController < ApplicationController
 
   def create
     @program = Program.new(program_params)
-    if @program.save
+    if @program.save!
       Program.build_training_plan(@program.id)
       redirect_to @program
     else
