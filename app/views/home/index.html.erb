@@ -1,0 +1,18 @@
+<% @groups.each do |g| %>
+    <h3>
+      <%= g.name %>
+    </h3>
+    <ul>
+      <% g.exercises.each do |e|%>
+        <h5>
+          <%= e.name %>
+        </h5>
+          <ol>
+            <% e.exercise_descriptions.each do |d| %>
+                <li><em><%= d.step %></em></li>
+            <% end %>
+          </ol>
+      <% end %>
+    </ul>
+
+<% end %>
