@@ -1,13 +1,31 @@
 class ProgramsController < ApplicationController
   skip_before_action :verify_authenticity_token,
                      :if => Proc.new { |c| c.request.format == 'application/json' }
+  EXCEPTIONS = [:created_at, :updated_at, :muscle_group_id, :exercise_id]
+  JSON_EX = {:include =>
+                 {:exercise_descriptions =>
+                      {:except => EXCEPTIONS + [:id]},
+                  :muscle_group => {except: EXCEPTIONS}},
+             :except => EXCEPTIONS}
+  JSON_DAY = {:include =>
+                   {:exercises => JSON_EX},
+               :except => EXCEPTIONS}
+  JSON_PROGRAM = {:include =>
+                        {:training_days => JSON_DAY},
+                  :except => EXCEPTIONS}
   def index
-    programs = []
-    Program.all.each do |p|
-      @program = p
-      programs << show_program
-    end
-    render json:  programs
+    # programs = []
+    # Program.all.each do |p|
+    #   @program = p
+    #   programs << show_program
+    # end
+    # render json:  programs
+=begin
+    render json: User.all[0].to_json(:include =>
+    {:programs => JSON_PROGRAM},
+     :except => EXCEPTIONS)
+=end
+    render json: Program.all[0].to_json(JSON_PROGRAM)
   end
 
   def show

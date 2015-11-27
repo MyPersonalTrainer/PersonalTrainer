@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127124528) do
+ActiveRecord::Schema.define(version: 20151127180335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,8 +53,9 @@ ActiveRecord::Schema.define(version: 20151127124528) do
 
   create_table "programs", force: :cascade do |t|
     t.integer  "training_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "training_place"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "training_day_exercises", force: :cascade do |t|
@@ -75,9 +76,28 @@ ActiveRecord::Schema.define(version: 20151127124528) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_programs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "program_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_programs", ["program_id"], name: "index_user_programs_on_program_id", using: :btree
+  add_index "user_programs", ["user_id"], name: "index_user_programs_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.boolean  "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "exercise_descriptions", "exercises"
   add_foreign_key "program_training_days", "programs"
   add_foreign_key "program_training_days", "training_days"
   add_foreign_key "training_day_exercises", "exercises"
   add_foreign_key "training_day_exercises", "training_days"
+  add_foreign_key "user_programs", "programs"
+  add_foreign_key "user_programs", "users"
 end
