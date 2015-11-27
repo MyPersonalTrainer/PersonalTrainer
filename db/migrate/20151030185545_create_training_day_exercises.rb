@@ -3,8 +3,9 @@ class CreateTrainingDayExercises < ActiveRecord::Migration
     create_table :training_day_exercises do |t|
       t.references :training_day, index: true
       t.references :exercise, index: true
-      t.integer :repetition
+      t.integer :repetitions
       t.integer :sets
+      t.integer :rest_time
 
       t.timestamps null: false
     end

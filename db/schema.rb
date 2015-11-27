@@ -11,14 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151114114249) do
+ActiveRecord::Schema.define(version: 20151127124528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "exercise_descriptions", force: :cascade do |t|
+    t.text     "step"
+    t.integer  "exercise_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "exercise_descriptions", ["exercise_id"], name: "index_exercise_descriptions_on_exercise_id", using: :btree
+
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
     t.integer  "muscle_group_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -44,23 +52,17 @@ ActiveRecord::Schema.define(version: 20151114114249) do
   add_index "program_training_days", ["training_day_id"], name: "index_program_training_days_on_training_day_id", using: :btree
 
   create_table "programs", force: :cascade do |t|
-    t.boolean  "gender"
-    t.integer  "age"
-    t.integer  "weight"
-    t.integer  "height"
-    t.integer  "activity"
-    t.integer  "physical_level"
-    t.integer  "complexity"
     t.integer  "training_type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "training_day_exercises", force: :cascade do |t|
     t.integer  "training_day_id"
     t.integer  "exercise_id"
-    t.integer  "repetition"
+    t.integer  "repetitions"
     t.integer  "sets"
+    t.integer  "rest_time"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -69,12 +71,13 @@ ActiveRecord::Schema.define(version: 20151114114249) do
   add_index "training_day_exercises", ["training_day_id"], name: "index_training_day_exercises_on_training_day_id", using: :btree
 
   create_table "training_days", force: :cascade do |t|
-    t.integer  "wday"
-    t.text     "muscles_groups",              array: true
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "exercise_descriptions", "exercises"
+  add_foreign_key "program_training_days", "programs"
+  add_foreign_key "program_training_days", "training_days"
   add_foreign_key "training_day_exercises", "exercises"
   add_foreign_key "training_day_exercises", "training_days"
 end
