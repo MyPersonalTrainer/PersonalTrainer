@@ -1,36 +1,12 @@
+<h3> New program: </h3>
 <%= form_for :program, url: programs_path do |f| %>
     <p>
-      <%= f.label :gender %><br>
-      <%= f.select :gender, Program::GENDER_OPTIONS  %>
-    </p>
-    <p>
-      <%= f.label :age %><br>
-      <%= f.text_field :age %>
-    </p>
-
-    <p>
-      <%= f.label :weight %><br>
-      <%= f.text_area :weight %>
-    </p>
-    <p>
-      <%= f.label :height %><br>
-      <%= f.text_area :height %>
-    </p>
-    <p>
-      <%= f.label :activity %><br>
-      <%= f.text_area :activity %>
-    </p>
-    <p>
-      <%= f.label :physical_level %><br>
-      <%= f.text_area :physical_level %>
-    </p>
-    <p>
-    <%= f.label :complexity %><br>
-    <%= f.text_area :complexity %>
-    </p>
-    <p>
       <%= f.label :training_type %><br>
-      <%= f.select :training_type, Program::TRAINING_TYPE %>
+      <%= f.select :training_type, Program::TRAINING_TYPE  %>
+    </p>
+    <p>
+      <%= f.label :training_place %><br>
+      <%= f.select :training_place, Program::TRAINING_PLACE  %>
     </p>
     <p>
       <%= f.submit %>

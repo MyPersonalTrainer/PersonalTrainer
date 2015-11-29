@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127180335) do
+ActiveRecord::Schema.define(version: 20151129174204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(version: 20151127180335) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "parameters", force: :cascade do |t|
+    t.integer  "weight"
+    t.integer  "height"
+    t.integer  "complexity"
+    t.boolean  "can_do_bars"
+    t.boolean  "can_do_hbar"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "parameters", ["user_id"], name: "index_parameters_on_user_id", using: :btree
 
   create_table "program_training_days", force: :cascade do |t|
     t.integer  "program_id"
@@ -89,11 +102,13 @@ ActiveRecord::Schema.define(version: 20151127180335) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.boolean  "gender"
+    t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "exercise_descriptions", "exercises"
+  add_foreign_key "parameters", "users"
   add_foreign_key "program_training_days", "programs"
   add_foreign_key "program_training_days", "training_days"
   add_foreign_key "training_day_exercises", "exercises"

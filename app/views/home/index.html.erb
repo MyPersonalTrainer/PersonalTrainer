@@ -5,13 +5,9 @@
     <ul>
       <% g.exercises.each do |e|%>
         <h5>
-          <%= e.name %>
+          <%= link_to e.name, exercise_path(e) %>
         </h5>
-          <ol>
-            <% e.exercise_descriptions.each do |d| %>
-                <li><em><%= d.step %></em></li>
-            <% end %>
-          </ol>
+
       <% end %>
     </ul>
 

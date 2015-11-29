@@ -1,0 +1,9 @@
+<h3><%= @exercise.name %></h3> (<%= @exercise.muscle_group.name %>)
+<ol>
+  <% @exercise.exercise_descriptions.each do |d|%>
+    <li>
+      <%= d.step %>
+    </li>
+  <% end %>
+</ol>
+

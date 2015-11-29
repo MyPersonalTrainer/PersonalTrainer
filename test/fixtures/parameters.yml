@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weight: 1
+  height: 1
+  complexity: 1
+  can_do_bars: false
+  can_do_hbar: false
+  user_id: 
+
+two:
+  weight: 1
+  height: 1
+  complexity: 1
+  can_do_bars: false
+  can_do_hbar: false
+  user_id: 

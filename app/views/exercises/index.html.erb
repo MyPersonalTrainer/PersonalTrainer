@@ -1,0 +1,8 @@
+<h3>Exercises:</h3>
+<ol>
+  <% @exercises.each do |ex| %>
+      <li>
+        <%= link_to ex.name, exercise_path(ex) %>
+      </li>
+  <% end %>
+</ol>

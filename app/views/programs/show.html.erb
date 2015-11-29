@@ -1,0 +1,13 @@
+<h3> Program </h3>
+<% i = 1 %>
+<% @program.training_days.each do |t| %>
+    <strong>Day #<%= i%></strong>
+    <ol>
+      <% t.exercises.each do |ex|%>
+        <li>
+          <%= link_to ex.name, exercise_path(ex) %>
+        </li>
+      <% end %>
+    </ol>
+
+<% end %>
