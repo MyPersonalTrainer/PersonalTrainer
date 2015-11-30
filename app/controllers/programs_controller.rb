@@ -3,7 +3,10 @@ class ProgramsController < ApplicationController
                      :if => Proc.new { |c| c.request.format == 'application/json' }
 
   def index
-
+    respond_to do |format|
+      format.html
+      format.json { render :json => Program.all.to_json(JSON_PROGRAM) }
+    end
   end
 
   def show

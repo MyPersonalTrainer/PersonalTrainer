@@ -9,5 +9,9 @@ class ExercisesController < ApplicationController
 
   def show
     @exercise = Exercise.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render :json => @exercise.to_json(JSON_EX) }
+    end
   end
 end
