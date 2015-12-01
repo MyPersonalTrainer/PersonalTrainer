@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
-  gender: false
+  user_id: 
+  program_id: 
 
 two:
-  email: MyString
-  gender: false
+  user_id: 
+  program_id: 

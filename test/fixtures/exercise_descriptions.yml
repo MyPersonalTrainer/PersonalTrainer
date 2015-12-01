@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
-  gender: false
+  step: MyText
+  exercise_id: 
 
 two:
-  email: MyString
-  gender: false
+  step: MyText
+  exercise_id: 

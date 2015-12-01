@@ -1,8 +1,18 @@
-<% @muscles.each do |m| %>
-    <h3><em><%= m.name %>:</em></h3>
-    <ol>
-        <% m.exercises.each do |e|%>
-            <li> <%= e.name %></li>
-        <% end %>
-    </ol>
+<% @groups.each do |g| %>
+    <h3>
+      <%= g.name %>
+    </h3>
+    <ul>
+      <% g.exercises.each do |e|%>
+        <h5>
+          <%= e.name %>
+        </h5>
+          <ol>
+            <% e.exercise_descriptions.each do |d| %>
+                <li><em><%= d.step %></em></li>
+            <% end %>
+          </ol>
+      <% end %>
+    </ul>
+
 <% end %>
