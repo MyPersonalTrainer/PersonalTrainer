@@ -471,5 +471,18 @@ ProgramTrainingDay.create(training_day: td1, program: program1)
 ProgramTrainingDay.create(training_day: td2, program: program1)
 ProgramTrainingDay.create(training_day: td3, program: program1)
 
+program2 = Program.create(training_type: 1, training_place: 1)
+ProgramTrainingDay.create(training_day: td1, program: program2)
+ProgramTrainingDay.create(training_day: td2, program: program2)
+ProgramTrainingDay.create(training_day: td3, program: program2)
+
+program3 = Program.create(training_type: 3, training_place: 1)
+ProgramTrainingDay.create(training_day: td1, program: program3)
+ProgramTrainingDay.create(training_day: td2, program: program3)
+ProgramTrainingDay.create(training_day: td3, program: program3)
+
+
 user = User.create(email: 'test_user@example.com', gender: true)
 UserProgram.create(user: user, program: program1)
+UserProgram.create(user: user, program: program2)
+UserProgram.create(user: user, program: program3)

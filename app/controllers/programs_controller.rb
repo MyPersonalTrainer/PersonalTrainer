@@ -3,9 +3,10 @@ class ProgramsController < ApplicationController
                      :if => Proc.new { |c| c.request.format == 'application/json' }
 
   def index
+    @programs = Program.all
     respond_to do |format|
       format.html
-      format.json { render :json => Program.all.to_json(JSON_PROGRAM) }
+      format.json { render :json => @programs.to_json(JSON_PROGRAM) }
     end
   end
 
@@ -28,7 +29,7 @@ class ProgramsController < ApplicationController
     if params
       type = params[:program][:training_type].to_i
       place = params[:program][:training_place].to_i
-      redirect_to Program.choose_program(type, place)
+      redirect_to program_path(Program.choose_program(type, place), :format => :json)
     end
   end
 
