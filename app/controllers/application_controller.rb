@@ -7,7 +7,10 @@ class ApplicationController < ActionController::Base
   JSON_EX = {:include =>
                  {:exercise_descriptions =>
                       {:except => EXCEPTIONS + [:id]},
-                  :muscle_group => {except: EXCEPTIONS}#,
+                  :muscle_group => {
+                      except: EXCEPTIONS,
+                      :methods => [:image_url]
+                  }#,
                   #:training_day_exercises => {only: [:sets, :repetitions, :rest_time]}
                  },
              :except => EXCEPTIONS}
