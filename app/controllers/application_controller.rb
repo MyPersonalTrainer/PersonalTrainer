@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  EXCEPTIONS = [:created_at, :muscle_group_id, :exercise_id]
+  EXCEPTIONS = [:created_at, :muscle_group_id, :exercise_id, :image]
   JSON_EX = {:include =>
                  {:exercise_descriptions =>
                       {:except => EXCEPTIONS + [:id]},
