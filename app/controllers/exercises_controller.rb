@@ -3,7 +3,7 @@ class ExercisesController < ApplicationController
     @exercises = Exercise.all
     respond_to do |format|
       format.html
-      format.json { render :json => @exercises.to_json(JSON_EX) }
+      format.json { render :json => @exercises.to_json(JSON_EX), :methods => [:avatar_url] }
     end
   end
 
@@ -11,7 +11,7 @@ class ExercisesController < ApplicationController
     @exercise = Exercise.find(params[:id])
     respond_to do |format|
       format.html
-      format.json { render :json => @exercise.to_json(JSON_EX) }
+      format.json { render :json => @exercise.to_json(JSON_EX), :methods => [:avatar_url]}
     end
   end
 end
