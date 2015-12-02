@@ -28,8 +28,8 @@ development:
   encoding: unicode
   database: stas
   pool: 5
-  username: stas
-  password: stason
+  username: siyko
+  password: kcin8891retnuh
 
 production:
   adapter: postgresql
