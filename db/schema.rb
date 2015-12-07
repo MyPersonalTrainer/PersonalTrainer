@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202202643) do
+ActiveRecord::Schema.define(version: 20151207195629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,13 @@ ActiveRecord::Schema.define(version: 20151202202643) do
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
     t.integer  "muscle_group_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "ex_image_file_name"
+    t.string   "ex_image_content_type"
+    t.integer  "ex_image_file_size"
+    t.datetime "ex_image_updated_at"
+    t.string   "video_url"
   end
 
   add_index "exercises", ["muscle_group_id"], name: "index_exercises_on_muscle_group_id", using: :btree
