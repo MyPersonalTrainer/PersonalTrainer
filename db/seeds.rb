@@ -471,16 +471,56 @@ ProgramTrainingDay.create(training_day: td1, program: program1)
 ProgramTrainingDay.create(training_day: td2, program: program1)
 ProgramTrainingDay.create(training_day: td3, program: program1)
 
+#strength
 program2 = Program.create(training_type: 1, training_place: 1)
-ProgramTrainingDay.create(training_day: td1, program: program2)
-ProgramTrainingDay.create(training_day: td2, program: program2)
-ProgramTrainingDay.create(training_day: td3, program: program2)
+td4 = TrainingDay.create
+td5 = TrainingDay.create
+td6 = TrainingDay.create
+TrainingDayExercise.create(training_day: td4, exercise: ex10, repetitions: 3, sets: 5, rest_time: 2)
+TrainingDayExercise.create(training_day: td4, exercise: ex12, repetitions: 7, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td4, exercise: ex13, repetitions: 4, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td4, exercise: ex5, repetitions: 8, sets: 5, rest_time: 2)
+
+TrainingDayExercise.create(training_day: td5, exercise: ex51, repetitions: 3, sets: 6, rest_time: 2)
+TrainingDayExercise.create(training_day: td5, exercise: ex1, repetitions: 6, sets: 6, rest_time: 2)
+TrainingDayExercise.create(training_day: td5, exercise: ex57, repetitions: 4, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td5, exercise: ex56, repetitions: 4, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td5, exercise: ex58, repetitions: 15, sets: 4, rest_time: 2)
+
+TrainingDayExercise.create(training_day: td6, exercise: ex11, repetitions: 6, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td6, exercise: ex31, repetitions: 6, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td6, exercise: ex20, repetitions: 5, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td6, exercise: ex30, repetitions: 8, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td6, exercise: ex32, repetitions: 6, sets: 4, rest_time: 2)
+
+ProgramTrainingDay.create(training_day: td4, program: program2)
+ProgramTrainingDay.create(training_day: td5, program: program2)
+ProgramTrainingDay.create(training_day: td6, program: program2)
 
 program3 = Program.create(training_type: 3, training_place: 1)
-ProgramTrainingDay.create(training_day: td1, program: program3)
-ProgramTrainingDay.create(training_day: td2, program: program3)
-ProgramTrainingDay.create(training_day: td3, program: program3)
+td7 = TrainingDay.create
+td8 = TrainingDay.create
+td9 = TrainingDay.create
+TrainingDayExercise.create(training_day: td7, exercise: ex20, repetitions: 10, sets: 3, rest_time: 2)
+TrainingDayExercise.create(training_day: td7, exercise: ex24, repetitions: 10, sets: 3, rest_time: 2)
+TrainingDayExercise.create(training_day: td7, exercise: ex32, repetitions: 10, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td7, exercise: ex31, repetitions: 8, sets: 3, rest_time: 2)
+TrainingDayExercise.create(training_day: td7, exercise: ex60, repetitions: 50, sets: 1, rest_time: 2)
 
+TrainingDayExercise.create(training_day: td8, exercise: ex10, repetitions: 10, sets: 3, rest_time: 2)
+TrainingDayExercise.create(training_day: td8, exercise: ex12, repetitions: 10, sets: 3, rest_time: 2)
+TrainingDayExercise.create(training_day: td8, exercise: ex11, repetitions: 10, sets: 3, rest_time: 2)
+TrainingDayExercise.create(training_day: td8, exercise: ex15, repetitions: 10, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td8, exercise: ex4, repetitions: 10, sets: 4, rest_time: 2)
+
+TrainingDayExercise.create(training_day: td9, exercise: ex41, repetitions: 10, sets: 3, rest_time: 2)
+TrainingDayExercise.create(training_day: td9, exercise: ex45, repetitions: 12, sets: 5, rest_time: 2)
+TrainingDayExercise.create(training_day: td9, exercise: ex40, repetitions: 10, sets: 4, rest_time: 2)
+TrainingDayExercise.create(training_day: td9, exercise: ex46, repetitions: 10, sets: 5, rest_time: 2)
+TrainingDayExercise.create(training_day: td9, exercise: ex60, repetitions: 50, sets: 1, rest_time: 2)
+ProgramTrainingDay.create(training_day: td7, program: program3)
+ProgramTrainingDay.create(training_day: td8, program: program3)
+ProgramTrainingDay.create(training_day: td9, program: program3)
 
 user = User.create(email: 'test_user@example.com', gender: true)
 UserProgram.create(user: user, program: program1)
